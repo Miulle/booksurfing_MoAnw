@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <Button
+        android:id="@+id/ScanButton"
+        android:layout_width="200dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="scanOnClick"
+        android:text="@string/scan_book"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/textScanView"
+        android:layout_width="398dp"
+        android:layout_height="72dp"
+        android:inputType="text"
+        android:text="@string/scan_color"
+        android:textColor="@color/colorAccent"
+        android:textColorHighlight="#00A81F1F"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="112dp" />
+
+    <Button
+        android:id="@+id/LibraryButton"
+        android:layout_width="194dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="viewLibraryOnClick"
+        android:text="@string/view_Library"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.349" />
+
+    <Button
+        android:id="@+id/buttonChangeIntent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnChangeIntent"
+        android:text="@string/change_intent"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="574dp" />
+
+    <Button
+        android:id="@+id/btnAddData"
+        android:layout_width="164dp"
+        android:layout_height="61dp"
+        android:onClick="btnAddData"
+        android:text="@string/add_data"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="423dp" />
+
+
+</android.support.constraint.ConstraintLayout>
