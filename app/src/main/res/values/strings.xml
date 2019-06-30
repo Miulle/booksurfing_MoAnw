@@ -28,8 +28,18 @@
     <string name="scan_isbn">Scan ISBN</string>
     <string name="save_book">Save</string>
 
-    <string name="author">Author</string>
-    <string name="title">Title</string>
-    <string name="owner">Owner</string>
-    <string name="borrowed">Borrowed</string>
+    <string name="author">Author:</string>
+    <string name="title">Title:</string>
+    <string name="owner">Owner:</string>
+    <string name="borrowed">Borrowed:</string>
+    
+    <string-array name="Owner">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="Borrowed">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
 </resources>
