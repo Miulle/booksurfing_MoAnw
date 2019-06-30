@@ -14,7 +14,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -114,50 +113,14 @@ public class MainActivity extends AppCompatActivity
 
     //TODO new View and fields - fill manually or per ISBN-Scanner
     public void scanOnClick(View view) {
-
-//        TextView textScan = findViewById(R.id.textScanView);
-//        i++;
-//        textScan.setText("Scan Button Clicked..." + i);
+        Intent intent = new Intent(MainActivity.this, AddBookActivity.class);
+        startActivity(intent);
     }
 
     //TODO ListView of Scanned Items
     public void viewLibraryOnClick(View view) {
-        //change intent
-        //TODO List all Items in SQL DB
         Intent intent = new Intent(MainActivity.this, ListDataActivity.class);
         startActivity(intent);
 
-        //TODO click on single item to display information
-
-    }
-
-    public void btnChangeIntent(View view) {
-        Intent intent = new Intent(MainActivity.this, ScanActivity.class);
-        startActivity(intent);
-    }
-
-    public void btnAddData(View view) {
-        TextView textView = findViewById(R.id.textScanView);
-        String newEntry = textView.getText().toString();
-//        toastMessage(databaseHelper.testfct());
-
-        //        toastMessage(newEntry);
-//        addData(newEntry);
-        if (newEntry.length() != 0) {
-            addData(newEntry);
-            textView.setText("");
-        } else {
-            toastMessage("You must put something into the text field");
-        }
-    }
-
-    public void addData(String s) {
-        toastMessage("STRING: " + s);
-        boolean insertData = databaseHelper.addData(s);
-//        if (insertData) {
-//            toastMessage("Data successfully added");
-//        } else {
-//            toastMessage("Something when wrong");
-//        }
     }
 }

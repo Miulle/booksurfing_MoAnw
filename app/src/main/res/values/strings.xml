@@ -27,6 +27,7 @@
 
     <string name="scan_isbn">Scan ISBN</string>
     <string name="save_book">Save</string>
+    <string name="back_lib">Back to Library</string>
 
     <string name="author">Author:</string>
     <string name="title">Title:</string>
