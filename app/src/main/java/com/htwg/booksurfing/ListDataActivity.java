@@ -48,6 +48,8 @@ public class ListDataActivity  extends AppCompatActivity {
                 bookData.add(i, book);
                 i++;
             }
+
+
         }
         FourColumnAdapter adapter = new FourColumnAdapter(this, bookData);
         listView.setAdapter(adapter);
