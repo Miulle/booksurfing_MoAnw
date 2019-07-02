@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG = "ContentMainActivity";
 
     DatabaseHelper databaseHelper;
-    BookDatabase bookdb;
+//    BookDatabase bookdb;
     private EditText editText;
 
     @Override
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
         databaseHelper = new DatabaseHelper(this);
 
         // Room DB
-        bookdb = Room.databaseBuilder(getApplicationContext(), BookDatabase.class, "bookdb").build();
+//        bookdb = Room.databaseBuilder(getApplicationContext(), BookDatabase.class, "bookdb").build();
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);

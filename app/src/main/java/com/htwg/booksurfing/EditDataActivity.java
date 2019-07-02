@@ -20,14 +20,12 @@ public class EditDataActivity extends AppCompatActivity {
 
     private static final String TAG = "EditDataActivity";
 
-    private Button btnSave,btnDelete;
     private TextView tViewA;
     private TextView tViewT;
     private TextView tViewO;
     private TextView tViewR;
     private TextView tViewTL;
     private TextView tViewTS;
-
 
     DatabaseHelper databaseHelper;
 
@@ -38,9 +36,6 @@ public class EditDataActivity extends AppCompatActivity {
     private String thumbnail;
     private String thumbnailSmall;
 
-
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +43,7 @@ public class EditDataActivity extends AppCompatActivity {
 
         Log.d(TAG, "starting onCreate");
 
-        btnDelete = findViewById(R.id.btnDelete);
+//        btnDelete = findViewById(R.id.btnDelete);
         tViewA = findViewById(R.id.tViewA);
         tViewT = findViewById(R.id.tViewT);
         tViewO = findViewById(R.id.tViewO);
@@ -75,10 +70,6 @@ public class EditDataActivity extends AppCompatActivity {
         tViewTS.setText(thumbnailSmall);
     }
 
-    /**
-     * customizable toast
-     * @param message
-     */
     private void toastMessage(String message){
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
     }
@@ -96,11 +87,11 @@ public class EditDataActivity extends AppCompatActivity {
         tViewTL.setText("");
         tViewTS.setText("");
         toastMessage("removed from database");
+        startActivity(new Intent(this, ListDataActivity.class));
     }
 
     public void backButton(View view) {
-        Intent i = new Intent(EditDataActivity.this, ListDataActivity.class);
-        startActivity(i);
+        startActivity(new Intent(EditDataActivity.this, ListDataActivity.class));
     }
 
     public void thumbNailL(View view) {
