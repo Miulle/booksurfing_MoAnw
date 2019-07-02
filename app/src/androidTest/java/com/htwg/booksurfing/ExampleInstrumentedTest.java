@@ -1,4 +1,4 @@
-package com.example.booksurfing;
+package com.htwg.booksurfing;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,7 +1,6 @@
-package com.example.booksurfing;
+package com.htwg.booksurfing;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +30,7 @@ public class FourColumnAdapter extends ArrayAdapter<Book> {
             TextView author = rowView.findViewById(R.id.txtAuthor);
             TextView title = rowView.findViewById(R.id.txtTitle);
             TextView owner = rowView.findViewById(R.id.txtOwner);
-            TextView borrowed = rowView.findViewById(R.id.txtBorrowed);
+            TextView rating = rowView.findViewById(R.id.txtRating);
             if (author != null) {
                 author.setText(book.getAuthor());
             }
@@ -41,8 +40,8 @@ public class FourColumnAdapter extends ArrayAdapter<Book> {
             if (owner != null) {
                 owner.setText((book.getOwner()));
             }
-            if (borrowed != null) {
-                borrowed.setText((book.getBorrowed()));
+            if (rating != null) {
+                rating.setText((book.getRating()));
             }
 
         }
