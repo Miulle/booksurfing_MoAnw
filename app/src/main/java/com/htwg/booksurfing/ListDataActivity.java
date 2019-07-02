@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -46,7 +44,7 @@ public class ListDataActivity  extends AppCompatActivity {
             Log.d(TAG, "NUMROWS = " + numRows);
             int i = 0;
             while(data1.moveToNext()) {
-                book = new Book(data1.getString(1), data1.getString(2), data1.getString(3), data1.getString(4), data1.getString(5), data1.getString(6));
+                book = new Book(data1.getInt(0), data1.getString(1), data1.getString(2), data1.getString(3), data1.getString(4), data1.getString(5), data1.getString(6));
                 bookData.add(i, book);
                 i++;
             }
@@ -74,24 +72,27 @@ public class ListDataActivity  extends AppCompatActivity {
     }
 
     public void searchBook(View view) {
-        String author = null;
-        String title = null;
-        String owner = null;
-        String rating = null;
-        String thumbnail = null;
-        String thumbnailSmall = null;
+        String author;
+        String title;
+        String owner;
+        String rating;
+        String thumbnail;
+        String thumbnailSmall;
         eView = findViewById(R.id.eViewSearch);
-        String bookToSearch = eView.getText().toString();
-        if (bookToSearch.length() == 0) {
-            toastMessage("You must put something into the text field");
+        String bookID = eView.getText().toString();
+        if (bookID.length() == 0) {
+            toastMessage("You must put an ID into the text field");
         } else {
-            Log.d(TAG, bookToSearch);
-            Cursor data = databaseHelper.getItemByTitle(bookToSearch);
+
+            Log.d(TAG, bookID);
+            //TODO search for ID instead
+            Cursor data = databaseHelper.getItemByID(bookID);
             Log.d(TAG, "found item " + data.getCount());
             if (data.getCount() == 0) {
                 toastMessage("Book not found!");
-            } else if (data.getCount() == 1) {
+            } else {
                 while (data.moveToNext()) {
+                    Log.d(TAG, "INDEX 0 " + data.getString(0));
                     Log.d(TAG, "INDEX 1 " + data.getString(1));
                     author = data.getString(1);
                     Log.d(TAG, "INDEX 2 " + data.getString(2));
@@ -104,19 +105,20 @@ public class ListDataActivity  extends AppCompatActivity {
                     thumbnail = data.getString(5);
                     Log.d(TAG, "INDEX 6 " + data.getString(6));
                     thumbnailSmall = data.getString(6);
-                }
-            } else {
-                toastMessage("More than 1 Book found!");
-            }
-            Intent i = new Intent(ListDataActivity.this, EditDataActivity.class);
-            i.putExtra("author", author);
-            i.putExtra("title", title);
-            i.putExtra("owner", owner);
-            i.putExtra("rating", rating);
-            i.putExtra("thumbnail", thumbnail);
-            i.putExtra("thumbnailSmall", thumbnailSmall);
+                    Intent i = new Intent(ListDataActivity.this, EditDataActivity.class);
+                    i.putExtra("author", author);
+                    i.putExtra("title", title);
+                    i.putExtra("owner", owner);
+                    i.putExtra("rating", rating);
+                    i.putExtra("thumbnail", thumbnail);
+                    i.putExtra("thumbnailSmall", thumbnailSmall);
 
-            startActivity(i);
+                    startActivity(i);
+                }
+            } //else {
+//                toastMessage("More than 1 Book found!");
+//            }
+
         }
 
     }

@@ -27,10 +27,16 @@ public class FourColumnAdapter extends ArrayAdapter<Book> {
         Book book = books.get(position);
 
         if (book != null) {
+            TextView id = rowView.findViewById(R.id.txtID);
             TextView author = rowView.findViewById(R.id.txtAuthor);
             TextView title = rowView.findViewById(R.id.txtTitle);
             TextView owner = rowView.findViewById(R.id.txtOwner);
             TextView rating = rowView.findViewById(R.id.txtRating);
+            if (id != null) {
+                Integer bookID = book.getId();
+                String bookIDString = "" + bookID;
+                id.setText(bookIDString);
+            }
             if (author != null) {
                 author.setText(book.getAuthor());
             }

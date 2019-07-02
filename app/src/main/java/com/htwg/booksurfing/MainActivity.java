@@ -121,4 +121,10 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
 
     }
+
+    public void btnWebView(View view) {
+        Intent i = new Intent(this, WebViewActivity.class);
+        i.putExtra("url", "http://google.com");
+        startActivity(i);
+    }
 }

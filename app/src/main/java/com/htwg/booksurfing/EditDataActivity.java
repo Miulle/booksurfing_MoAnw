@@ -1,6 +1,7 @@
 package com.htwg.booksurfing;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -83,6 +84,9 @@ public class EditDataActivity extends AppCompatActivity {
     }
 
     public void deleteButton(View view) {
+        if (tViewT.length() == 0) {
+            toastMessage("no book to delete!");
+        }
         databaseHelper.delete(author, title);
         tViewA.setText("");
         tViewT.setText("");
@@ -100,7 +104,26 @@ public class EditDataActivity extends AppCompatActivity {
     }
 
     public void thumbNailL(View view) {
-        tViewTL.getText().toString();
-        
+        String urlTL = tViewTL.getText().toString();
+        if (urlTL.length() == 0) {
+            toastMessage("no url found");
+        } else {
+//            toastMessage(urlTL);
+            Intent i = new Intent(this, WebViewActivity.class);
+            i.putExtra("url", urlTL);
+            startActivity(i);
+        }
+    }
+
+    public void thumbnailS(View view) {
+        String urlTS = tViewTS.getText().toString();
+        if (urlTS.length() == 0) {
+            toastMessage("no url found");
+        } else {
+//            toastMessage(urlTS);
+            Intent i = new Intent(this, WebViewActivity.class);
+            i.putExtra("url", urlTS);
+            startActivity(i);
+        }
     }
 }

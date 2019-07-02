@@ -69,11 +69,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
-    //TODO implement search
     public Cursor getItemByTitle(String title) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL3 + " = '" + title + "'";
         Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COL3 + " = '" + title + "'", null);
+        return data;
+    }
+
+    public Cursor getItemByID(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL1 + " = '" + id + "'";
+        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COL1 + " = '" + id + "'", null);
         return data;
     }
 

@@ -1,6 +1,7 @@
 package com.htwg.booksurfing;
 
 public class Book {
+    private int id;
     private String Author;
     private String Title;
     private String Owner;
@@ -8,7 +9,8 @@ public class Book {
     private String ThumbnailSmall;
     private String Thumbnail;
 
-    public Book(String a, String t, String o, String r, String ts, String tl) {
+    public Book(int id, String a, String t, String o, String r, String ts, String tl) {
+        this.id = id;
         this.Author = a;
         this.Title = t;
         this.Owner = o;
@@ -16,6 +18,14 @@ public class Book {
         this.ThumbnailSmall = ts;
         this.Thumbnail = tl;
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getAuthor() {
