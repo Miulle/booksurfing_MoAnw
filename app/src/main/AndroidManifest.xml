@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.booksurfing">
+    package="com.htwg.booksurfing">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.htwg.booksurfing.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,17 +23,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ListDataActivity"
+            android:name="com.htwg.booksurfing.ListDataActivity"
             android:label="@string/app_name">
         </activity>
 
         <activity
-            android:name=".ScanActivity"
+            android:name="com.htwg.booksurfing.ScanActivity"
             android:label="@string/app_name">
         </activity>
 
         <activity
-            android:name=".AddBookActivity"
+            android:name="com.htwg.booksurfing.AddBookActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name="com.htwg.booksurfing.EditDataActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name="com.htwg.booksurfing.SettingsActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name="com.htwg.booksurfing.WebViewActivity"
             android:label="@string/app_name">
         </activity>
 

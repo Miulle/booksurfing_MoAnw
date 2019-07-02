@@ -1,5 +1,6 @@
-package com.example.booksurfing;
+package com.htwg.booksurfing;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,9 +15,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
@@ -25,23 +24,29 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG = "ContentMainActivity";
 
     DatabaseHelper databaseHelper;
+//    BookDatabase bookdb;
     private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // SQLite DB
         databaseHelper = new DatabaseHelper(this);
+
+        // Room DB
+//        bookdb = Room.databaseBuilder(getApplicationContext(), BookDatabase.class, "bookdb").build();
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -77,6 +82,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
 
@@ -90,14 +96,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
+            Intent i = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(i);
+
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 
@@ -114,50 +118,20 @@ public class MainActivity extends AppCompatActivity
 
     //TODO new View and fields - fill manually or per ISBN-Scanner
     public void scanOnClick(View view) {
-
-//        TextView textScan = findViewById(R.id.textScanView);
-//        i++;
-//        textScan.setText("Scan Button Clicked..." + i);
+        Intent intent = new Intent(MainActivity.this, AddBookActivity.class);
+        startActivity(intent);
     }
 
     //TODO ListView of Scanned Items
     public void viewLibraryOnClick(View view) {
-        //change intent
-        //TODO List all Items in SQL DB
         Intent intent = new Intent(MainActivity.this, ListDataActivity.class);
         startActivity(intent);
 
-        //TODO click on single item to display information
-
     }
 
-    public void btnChangeIntent(View view) {
-        Intent intent = new Intent(MainActivity.this, ScanActivity.class);
-        startActivity(intent);
-    }
-
-    public void btnAddData(View view) {
-        TextView textView = findViewById(R.id.textScanView);
-        String newEntry = textView.getText().toString();
-//        toastMessage(databaseHelper.testfct());
-
-        //        toastMessage(newEntry);
-//        addData(newEntry);
-        if (newEntry.length() != 0) {
-            addData(newEntry);
-            textView.setText("");
-        } else {
-            toastMessage("You must put something into the text field");
-        }
-    }
-
-    public void addData(String s) {
-        toastMessage("STRING: " + s);
-        boolean insertData = databaseHelper.addData(s);
-//        if (insertData) {
-//            toastMessage("Data successfully added");
-//        } else {
-//            toastMessage("Something when wrong");
-//        }
+    public void btnWebView(View view) {
+        Intent i = new Intent(this, WebViewActivity.class);
+        i.putExtra("url", "http://google.com");
+        startActivity(i);
     }
 }

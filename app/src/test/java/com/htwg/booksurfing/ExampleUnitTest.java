@@ -1,4 +1,4 @@
-package com.example.booksurfing;
+package com.htwg.booksurfing;
 
 import org.junit.Test;
 
