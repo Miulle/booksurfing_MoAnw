@@ -109,7 +109,6 @@ public class EditDataActivity extends AppCompatActivity {
         if (urlTS.length() == 0) {
             toastMessage("no url found");
         } else {
-//            toastMessage(urlTS);
             Intent i = new Intent(this, WebViewActivity2.class);
             i.putExtra("url", urlTS);
             startActivity(i);
