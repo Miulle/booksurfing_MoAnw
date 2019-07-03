@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_2_round"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -43,12 +43,12 @@
         </activity>
 
         <activity
-            android:name="com.htwg.booksurfing.SettingsActivity"
+            android:name="com.htwg.booksurfing.WebViewActivity"
             android:label="@string/app_name">
         </activity>
 
         <activity
-            android:name="com.htwg.booksurfing.WebViewActivity"
+            android:name="com.htwg.booksurfing.WebViewActivity2"
             android:label="@string/app_name">
         </activity>
 

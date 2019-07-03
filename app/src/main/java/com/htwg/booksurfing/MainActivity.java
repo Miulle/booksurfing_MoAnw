@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(this, SettingsActivity.class));
+            getFragmentManager().beginTransaction().replace(android.R.id.content, new MyPreferenceFragment()).commit();
             return true;
         }
 
@@ -96,8 +96,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            Intent i = new Intent(MainActivity.this, SettingsActivity.class);
-            startActivity(i);
+            getFragmentManager().beginTransaction().replace(android.R.id.content, new MyPreferenceFragment()).commit();
 
         } else if (id == R.id.nav_gallery) {
 

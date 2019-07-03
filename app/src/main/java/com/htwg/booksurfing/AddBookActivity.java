@@ -24,6 +24,7 @@ public class AddBookActivity extends AppCompatActivity {
     EditText textViewR;
     EditText textViewTL;
     EditText textViewTS;
+    EditText textViewPC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +38,9 @@ public class AddBookActivity extends AppCompatActivity {
         textViewR = findViewById(R.id.editViewRating);
         textViewTL = findViewById(R.id.editViewThumbnailL);
         textViewTS = findViewById(R.id.editViewThumbnailS);
+        textViewPC = findViewById(R.id.editViewPagecount);
         Log.d(TAG, "Starting Api Request");
-        new ParseApi(this, textViewA, textViewT, textViewR, textViewTL, textViewTS).execute(isbn);
+
 
         databaseHelper = new DatabaseHelper(this);
 
@@ -53,41 +55,19 @@ public class AddBookActivity extends AppCompatActivity {
 
         mySpinnerOwner.setAdapter(myAdapterOwner);
 //        mySpinnerBorrowed.setAdapter(myAdapterBorrowed);
+        if(isbn != null) {
+            new ParseApi(this, textViewA, textViewT, textViewR, textViewTL, textViewTS, textViewPC).execute(isbn);
+        }
+
     }
 
     private void toastMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    //TODO save into DB
-    public void saveDataToDB(View view) {
-
-        String author = textViewA.getText().toString();
-        String title = textViewT.getText().toString();
-        String owner = mySpinnerOwner.getSelectedItem().toString();
-        String rating = textViewR.getText().toString();
-        String thumbnailL = textViewTL.getText().toString();
-        String thumbnailS = textViewTS.getText().toString();
-
-        if (author.length() != 0 && title.length() != 0 && rating.length() != 0) {
-            addData(author, title, owner, rating, thumbnailL, thumbnailS);
-            textViewA.setText("");
-            textViewT.setText("");
-            textViewR.setText("");
-        } else {
-            toastMessage("You must put something into the text field");
-        }
-    }
-
-    //TODO scan ISBN
-    public void scanIsbn(View view) {
-        Intent intent = new Intent(AddBookActivity.this, ScanActivity.class);
-        startActivity(intent);
-    }
-
-    public void addData(String a, String t, String o, String r, String tl, String ts) {
+    public void addData(String a, String t, String o, String r, String tl, String ts, String pc) {
         toastMessage(a + t + o + r);
-        boolean insertData = databaseHelper.addDataToBookTable(a, t, o, r, tl, ts);
+        boolean insertData = databaseHelper.addDataToBookable(a, t, o, r, tl, ts, pc);
         if (insertData==true) {
             toastMessage("Data successfully added");
         } else {
@@ -95,13 +75,38 @@ public class AddBookActivity extends AppCompatActivity {
         }
     }
 
-    public void backToLib(View view) {
+    public void returnHome(View view) {
+        Intent i = new Intent(AddBookActivity.this, MainActivity.class);
+        startActivity(i);
+    }
+
+    public void fabBackToLib(View view) {
         Intent intent = new Intent(AddBookActivity.this, ListDataActivity.class);
         startActivity(intent);
     }
 
-    public void returnHome(View view) {
-        Intent i = new Intent(AddBookActivity.this, MainActivity.class);
-        startActivity(i);
+    public void fabSaveToDB(View view) {
+        String author = textViewA.getText().toString();
+        String title = textViewT.getText().toString();
+        String owner = mySpinnerOwner.getSelectedItem().toString();
+        String rating = textViewR.getText().toString();
+        String thumbnailL = textViewTL.getText().toString();
+        String thumbnailS = textViewTS.getText().toString();
+        String pageCount = textViewPC.getText().toString();
+
+        if (author.length() != 0 && title.length() != 0 && rating.length() != 0) {
+            addData(author, title, owner, rating, thumbnailL, thumbnailS, pageCount);
+            textViewA.setText("");
+            textViewT.setText("");
+            textViewR.setText("");
+            textViewPC.setText("");
+        } else {
+            toastMessage("You must put something into the text field");
+        }
+    }
+
+    public void fabScan(View view) {
+        Intent intent = new Intent(AddBookActivity.this, ScanActivity.class);
+        startActivity(intent);
     }
 }
