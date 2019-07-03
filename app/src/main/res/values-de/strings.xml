@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Booksurfing</string>
+    <string name="navigation_drawer_open">Öffne Navigations Schublade</string>
+    <string name="navigation_drawer_close">Schließe Navigations Schublade</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigations Kopf</string>
+    <string name="action_settings">Einstellungen</string>
+
+    <string name="MainscreenText">Willkommen zu deiner Bibliothek! Du kannst entweder deine Bücherliste einsehen oder ein neues Buch eintragen</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Galerie</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Werkzeuge</string>
+    <string name="menu_share">Teilen</string>
+    <string name="menu_send">Senden</string>
+
+    <string name="scan_book">Neues Buch eintragen</string>
+    <string name="view_Library">Bibliothek öffnen</string>
+
+    <string name="add_data">Daten hinzufügen</string>
+    <string name="add_book_manually">Buch manuell hinzufügen</string>
+    <string name="add_book">Buch hinzufügen</string>
+    <string name="delete_book">Buch löschen</string>
+    <string name="search_book">Suchen</string>
+    <string name="eViewDelete">eViewDelete</string>
+    <string name="whichBookToDelete">Please insert the booktitle that you want to delete:</string>
+    <string name="whichBookToSearch">Bitte gebe BuchId/Buchtitel ein:</string>
+
+    <string name="scan_isbn">Scanne ISBN</string>
+    <string name="save_book">Speichern</string>
+    <string name="back_lib">Zurück zur Bibliothek</string>
+
+    <string name="author">Autor:</string>
+    <string name="title">Titel:</string>
+    <string name="owner">Besitzer:</string>
+    <string name="rating">Rating:</string>
+    <string name="eViewRating">n/v</string>
+    
+    <string-array name="Owner">
+        <item>Ja</item>
+        <item>Nein</item>
+    </string-array>
+
+    <string-array name="Borrowed">
+        <item>Ja</item>
+        <item>Nein</item>
+    </string-array>
+
+    <string name="pref_title_display_name">API Schlüssel für Google Books API</string>
+    <string name="pref_default_display_name">AIzaSyD2z6y5CfLw3R7dk5-0sJR3Ss2nP7QLd5Q</string>
+    <string name="pref_api_summary">API Schlüssel um die Google Books API nutzen zu können</string>
+
+    <string name="pref_title_display_username">Nutzer</string>
+    <string name="pref_default_display_username">Mikael</string>
+    <string name="pref_api_summaryuser">Mikael</string>
+    <string name="textViewTSEditLayout">Thumbnail(s):</string>
+    <string name="textViewTLEditLayout">Thumbnail(l):</string>
+    <string name="textViewRatingEditLayout">Rating:</string>
+    <string name="textViewOwnerEditLayout">Besitzer:</string>
+    <string name="textViewTitleEditLayout">Titel:</string>
+    <string name="textViewAuthorEditLayout">Autor:</string>
+
+    <string name="webViewButton">Suche Buch online</string>
+
+    <string name="table_id">ID</string>
+    <string name="table_author">Autor</string>
+    <string name="table_title">Titel</string>
+    <string name="table_owner">Besitzer</string>
+    <string name="table_rating">Rating</string>
+
+</resources>
