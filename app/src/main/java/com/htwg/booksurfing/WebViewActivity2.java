@@ -33,7 +33,6 @@ public class WebViewActivity2 extends AppCompatActivity {
             webView.goBack();
         } else {
             startActivity(new Intent(WebViewActivity2.this, ListDataActivity.class));
-//            super.onBackPressed();
         }
 
     }

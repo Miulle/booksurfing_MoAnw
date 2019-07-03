@@ -141,7 +141,7 @@ public class ScanActivity extends AppCompatActivity {
         waitingDialog.dismiss();
     }
 
-    public void btn_scan(View view) {
+    public void fabScan(View view) {
         cameraView.start();
         cameraView.captureImage();
     }
