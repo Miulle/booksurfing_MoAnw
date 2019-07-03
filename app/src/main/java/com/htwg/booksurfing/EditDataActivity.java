@@ -1,8 +1,10 @@
 package com.htwg.booksurfing;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -27,6 +29,7 @@ public class EditDataActivity extends AppCompatActivity {
     private TextView tViewTL;
     private TextView tViewTS;
     private TextView tViewPC;
+    private TextView tViewON;
 
     DatabaseHelper databaseHelper;
 
@@ -54,7 +57,7 @@ public class EditDataActivity extends AppCompatActivity {
         tViewTL = findViewById(R.id.tViewTL);
         tViewTS = findViewById(R.id.tViewTS);
         tViewPC = findViewById(R.id.tViewPC);
-
+        tViewON = findViewById(R.id.tViewON);
 
         //get the intent extra from the ListDataActivity
         Intent receivedIntent = getIntent();
@@ -74,6 +77,15 @@ public class EditDataActivity extends AppCompatActivity {
         tViewTL.setText(thumbnail);
         tViewTS.setText(thumbnailSmall);
         tViewPC.setText(pageCount);
+
+        SharedPreferences mSettings = PreferenceManager.getDefaultSharedPreferences(this);
+        String ownerName = mSettings.getString("username", "@string/pref_title_display_username");
+        Log.d(TAG, "Owner: " + owner);
+        Log.d(TAG, "Ownername: " + ownerName);
+        // get Owner Name from SharedPref if owner == yes
+        if (owner.equals("+") || owner.equals("Ja")) {
+            tViewON.setText(ownerName);
+        }
     }
 
     private void toastMessage(String message){
@@ -97,7 +109,6 @@ public class EditDataActivity extends AppCompatActivity {
         if (urlTS.length() == 0) {
             toastMessage("no url found");
         } else {
-//            toastMessage(urlTS);
             Intent i = new Intent(this, WebViewActivity2.class);
             i.putExtra("url", urlTS);
             startActivity(i);
@@ -121,6 +132,7 @@ public class EditDataActivity extends AppCompatActivity {
         tViewTL.setText("");
         tViewTS.setText("");
         tViewPC.setText("");
+        tViewON.setText("");
         toastMessage("removed from database");
 //        startActivity(new Intent(this, ListDataActivity.class));
     }
