@@ -14,7 +14,7 @@ public class MyPreferenceFragment extends android.preference.PreferenceFragment 
 
     public static final String PREF_API_KEY = "pref.api.key";
 
-    public static final String USERNAME = "Mikael";
+    public static final String USERNAME = "pref.username";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -24,7 +24,6 @@ public class MyPreferenceFragment extends android.preference.PreferenceFragment 
 
 
         view.setBackgroundColor(getResources().getColor(android.R.color.white));
-//        view.
 
         Preference prefKey = findPreference("pref_api_key");
         Preference prefUserName = findPreference("username");

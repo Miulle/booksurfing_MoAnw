@@ -149,6 +149,8 @@ public class ParseApi extends AsyncTask<String, Void, String> {
                     e.printStackTrace();
                 }
 
+                author = author.substring(2, author.length()-2);
+
                 if (title != null && author != null) {
                     Log.d(TAG, "Setting texts " + title + " " + author + " " + rating + " " + smallThumbNail + " " + largeThumbNail);
                     mTitleText.setText(title);

@@ -32,13 +32,9 @@ public class WebViewActivity2 extends AppCompatActivity {
         if (webView.canGoBack()) {
             webView.goBack();
         } else {
-            startActivity(new Intent(WebViewActivity2.this, MainActivity.class));
+            startActivity(new Intent(WebViewActivity2.this, ListDataActivity.class));
 //            super.onBackPressed();
         }
 
-    }
-
-    public void fabReturnToLib(View view) {
-        startActivity(new Intent(WebViewActivity2.this, ListDataActivity.class));
     }
 }

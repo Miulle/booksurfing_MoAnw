@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,7 +30,7 @@ public class EditDataActivity extends AppCompatActivity {
     private TextView tViewTL;
     private TextView tViewTS;
     private TextView tViewPC;
-    private TextView tViewON;
+    private EditText tViewON;
 
     DatabaseHelper databaseHelper;
 
@@ -47,6 +48,8 @@ public class EditDataActivity extends AppCompatActivity {
         setContentView(R.layout.edit_data_layout);
 
         Log.d(TAG, "starting onCreate");
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         databaseHelper = new DatabaseHelper(this);
 

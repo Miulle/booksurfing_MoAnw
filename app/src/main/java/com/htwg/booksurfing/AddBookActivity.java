@@ -94,7 +94,10 @@ public class AddBookActivity extends AppCompatActivity {
         String thumbnailS = textViewTS.getText().toString();
         String pageCount = textViewPC.getText().toString();
 
-        if (author.length() != 0 && title.length() != 0 && rating.length() != 0) {
+        Log.d(TAG, "RATING: " + rating);
+        Log.d(TAG, "PAGES: " + pageCount);
+
+        if (author.length() != 0 && title.length() != 0) {
             addData(author, title, owner, rating, thumbnailL, thumbnailS, pageCount);
             textViewA.setText("");
             textViewT.setText("");

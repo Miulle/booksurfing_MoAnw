@@ -136,31 +136,31 @@
                 android:layout_height="match_parent">
 
                 <TextView
-            android:id="@+id/textViewOwnerNameEditLayout"
-            android:layout_width="87dp"
-            android:layout_height="48dp"
-            android:layout_gravity="left"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/textViewOwnerNameEditLayout"
-            android:textSize="14sp" />
+                    android:id="@+id/textViewOwnerNameEditLayout"
+                    android:layout_width="87dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/textViewOwnerNameEditLayout"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/tViewON"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:ems="10" />
+                <EditText
+                    android:id="@+id/tViewON"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:ems="10" />
             </TableRow>
 
             <TableRow
@@ -192,7 +192,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
                     android:ems="10"
-                    android:layout_gravity="left" />
+                    android:layout_gravity="left"/>
 
             </TableRow>
 

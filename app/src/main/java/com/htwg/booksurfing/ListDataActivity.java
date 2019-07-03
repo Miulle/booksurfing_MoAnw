@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,6 +25,7 @@ public class ListDataActivity  extends AppCompatActivity {
     Book book;
     ArrayList<Book> bookData;
     EditText eView;
+    FourColumnAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,19 +52,39 @@ public class ListDataActivity  extends AppCompatActivity {
                 i++;
             }
         }
-        FourColumnAdapter adapter = new FourColumnAdapter(this, bookData);
+        adapter = new FourColumnAdapter(this, bookData);
         listView.setAdapter(adapter);
 
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view,
-                                        int position, long id) {
-                    Book book = (Book) parent.getItemAtPosition(position);
-                    Integer bookId = book.getId();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Book book = (Book) parent.getItemAtPosition(position);
+                Integer bookId = book.getId();
 //                    Toast.makeText(ListDataActivity.this, "You Clicked at " + bookId, Toast.LENGTH_SHORT).show();
-                    searchBookId(bookId);
-                }
-            });
+                searchBookId(bookId);
+            }
+        });
+
+        //ListView Filter
+        EditText filter = findViewById(R.id.tViewEditFilter);
+        filter.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                (ListDataActivity.this).adapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
 
     }
 
