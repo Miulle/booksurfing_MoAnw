@@ -58,7 +58,10 @@ public class ListDataActivity  extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view,
                                         int position, long id) {
-                    Toast.makeText(ListDataActivity.this, "You Clicked at " + position, Toast.LENGTH_SHORT).show();
+                    Book book = (Book) parent.getItemAtPosition(position);
+                    Integer bookId = book.getId();
+                    Toast.makeText(ListDataActivity.this, "You Clicked at " + bookId, Toast.LENGTH_SHORT).show();
+                    searchBookId(bookId);
                 }
             });
 
@@ -73,7 +76,50 @@ public class ListDataActivity  extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void searchBook(View view) {
+    public void searchBookId(Integer bookid) {
+        Log.d(TAG, bookid.toString());
+
+        String author;
+        String title;
+        String owner;
+        String rating;
+        String thumbnail;
+        String thumbnailSmall;
+
+        Cursor data = databaseHelper.getItemByID(bookid.toString());
+        Log.d(TAG, "found item " + data.getCount());
+        if (data.getCount() == 0) {
+            toastMessage("Book not found!");
+        } else {
+            while (data.moveToNext()) {
+                Log.d(TAG, "INDEX 0 " + data.getString(0));
+                Log.d(TAG, "INDEX 1 " + data.getString(1));
+                author = data.getString(1);
+                Log.d(TAG, "INDEX 2 " + data.getString(2));
+                title = data.getString(2);
+                Log.d(TAG, "INDEX 3 " + data.getString(3));
+                owner = data.getString(3);
+                Log.d(TAG, "INDEX 4 " + data.getString(4));
+                rating = data.getString(4);
+                Log.d(TAG, "INDEX 5 " + data.getString(5));
+                thumbnail = data.getString(5);
+                Log.d(TAG, "INDEX 6 " + data.getString(6));
+                thumbnailSmall = data.getString(6);
+                Intent i = new Intent(ListDataActivity.this, EditDataActivity.class);
+                i.putExtra("author", author);
+                i.putExtra("title", title);
+                i.putExtra("owner", owner);
+                i.putExtra("rating", rating);
+                i.putExtra("thumbnail", thumbnail);
+                i.putExtra("thumbnailSmall", thumbnailSmall);
+
+                startActivity(i);
+            }
+        }
+    }
+
+    /*public void searchBook(View view) {
+
         String author;
         String title;
         String owner;
@@ -159,7 +205,7 @@ public class ListDataActivity  extends AppCompatActivity {
 
 
 
-    }
+    }*/
 
     public void returnHome(View view) {
         Intent i = new Intent(ListDataActivity.this, MainActivity.class);

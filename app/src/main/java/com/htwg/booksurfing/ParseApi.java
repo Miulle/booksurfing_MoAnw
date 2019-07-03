@@ -92,7 +92,7 @@ public class ParseApi extends AsyncTask<String, Void, String> {
                     e.printStackTrace();
                 }
             }
-            Log.d(TAG, stringBuffer.toString());
+            //Log.d(TAG, stringBuffer.toString());
             return stringBuffer.toString();
         }
     }

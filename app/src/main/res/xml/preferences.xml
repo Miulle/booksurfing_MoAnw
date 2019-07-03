@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Preference xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+        <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+        <EditTextPreference
+            android:capitalize="words"
+            android:defaultValue="@string/pref_default_display_name"
+            android:inputType="text"
+            android:key="pref_api_key"
+            android:maxLines="2"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_title_display_name"
+            android:summary="@string/pref_api_summary"/>
+
+        <EditTextPreference
+            android:capitalize="words"
+            android:defaultValue="@string/pref_title_display_username"
+            android:inputType="text"
+            android:key="username"
+            android:maxLines="2"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_title_display_username"
+            android:summary="@string/pref_api_summaryuser"/>
+
+        </LinearLayout>
+
+
+
+
+
+</Preference>
+
