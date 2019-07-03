@@ -19,7 +19,7 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -171,28 +171,28 @@
                     android:id="@+id/textViewRatingEditLayout"
                     android:layout_width="87dp"
                     android:layout_height="48dp"
+                    android:layout_gravity="left"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
-                    android:textSize="14sp"
                     android:text="@string/textViewRatingEditLayout"
-                    android:layout_gravity="left"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tViewR"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
-                    android:ems="10"
-                    android:layout_gravity="left"/>
+                    android:ems="10" />
 
             </TableRow>
 
@@ -204,20 +204,21 @@
                     android:id="@+id/textViewTLEditLayout"
                     android:layout_width="87dp"
                     android:layout_height="48dp"
+                    android:layout_gravity="left"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
-                    android:textSize="14sp"
                     android:text="@string/textViewTLEditLayout"
-                    android:layout_gravity="left"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tViewTL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -229,7 +230,6 @@
                     android:focusable="true"
                     android:linksClickable="true"
                     android:onClick="thumbNailL"
-                    android:layout_gravity="left"
                     android:textSize="12sp"
                     app:autoSizeTextType="uniform" />
             </TableRow>
@@ -242,20 +242,21 @@
                     android:id="@+id/textViewTSEditLayout"
                     android:layout_width="87dp"
                     android:layout_height="48dp"
+                    android:layout_gravity="left"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
-                    android:textSize="14sp"
                     android:text="@string/textViewTSEditLayout"
-                    android:layout_gravity="left"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tViewTS"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -265,7 +266,6 @@
                     android:ems="10"
                     android:linksClickable="true"
                     android:onClick="thumbnailS"
-                    android:layout_gravity="left"
                     android:textSize="12sp"
                     app:autoSizeTextType="uniform" />
             </TableRow>
@@ -273,24 +273,26 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <TextView
                     android:id="@+id/textViewPCEditLayout"
                     android:layout_width="87dp"
                     android:layout_height="48dp"
+                    android:layout_gravity="left"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
-                    android:textSize="14sp"
                     android:text="@string/textViewPCEditLayout"
-                    android:layout_gravity="left"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tViewPC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
@@ -298,8 +300,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
                     android:ems="10"
-                    android:textSize="12sp"
-                    android:layout_gravity="left" />
+                    android:textSize="12sp" />
             </TableRow>
 
             <!--</TableLayout>-->
@@ -318,16 +319,16 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:clickable="true"
+        android:focusable="true"
         android:onClick="fabDelete"
         app:backgroundTint="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="@+id/scrollView2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.987"
-        app:srcCompat="@android:drawable/ic_menu_delete"
-        android:focusable="true" />
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton3"
@@ -350,6 +351,27 @@
         app:layout_constraintVertical_bias="0.987"
         app:srcCompat="?attr/homeAsUpIndicator"
         android:focusable="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabEditUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:onClick="fabUpdateDB"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.987"
+        app:srcCompat="@android:drawable/ic_menu_rotate" />
 
 
 </android.support.constraint.ConstraintLayout>

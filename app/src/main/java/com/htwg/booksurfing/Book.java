@@ -9,8 +9,9 @@ public class Book {
     private String ThumbnailSmall;
     private String Thumbnail;
     private String pageCount;
+    private String ownerName;
 
-    public Book(int id, String a, String t, String o, String r, String ts, String tl, String pc) {
+    public Book(int id, String a, String t, String o, String r, String ts, String tl, String pc, String oN) {
         this.id = id;
         this.Author = a;
         this.Title = t;
@@ -19,6 +20,7 @@ public class Book {
         this.ThumbnailSmall = ts;
         this.Thumbnail = tl;
         this.pageCount = pc;
+        this.ownerName = oN;
 
     }
 
@@ -84,5 +86,13 @@ public class Book {
 
     public void setPageCount(String pc) {
         this.pageCount= pc;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String oN) {
+        this.ownerName= oN;
     }
 }

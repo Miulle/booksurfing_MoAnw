@@ -34,6 +34,7 @@ public class EditDataActivity extends AppCompatActivity {
 
     DatabaseHelper databaseHelper;
 
+    String bookid;
     private String author;
     private String title;
     private String owner;
@@ -41,6 +42,7 @@ public class EditDataActivity extends AppCompatActivity {
     private String thumbnail;
     private String thumbnailSmall;
     private String pageCount;
+    private String ownerName;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,6 +66,7 @@ public class EditDataActivity extends AppCompatActivity {
 
         //get the intent extra from the ListDataActivity
         Intent receivedIntent = getIntent();
+        bookid = receivedIntent.getStringExtra("bookid");
         author = receivedIntent.getStringExtra("author");
         title = receivedIntent.getStringExtra("title");
         owner = receivedIntent.getStringExtra("owner");
@@ -71,6 +74,7 @@ public class EditDataActivity extends AppCompatActivity {
         thumbnail = receivedIntent.getStringExtra("thumbnail");
         thumbnailSmall = receivedIntent.getStringExtra("thumbnailSmall");
         pageCount = receivedIntent.getStringExtra("pageCount");
+        ownerName = receivedIntent.getStringExtra("ownerName");
 
         //set the text to show the current selected name
         tViewA.setText(author);
@@ -80,15 +84,16 @@ public class EditDataActivity extends AppCompatActivity {
         tViewTL.setText(thumbnail);
         tViewTS.setText(thumbnailSmall);
         tViewPC.setText(pageCount);
+        tViewON.setText(ownerName);
 
-        SharedPreferences mSettings = PreferenceManager.getDefaultSharedPreferences(this);
-        String ownerName = mSettings.getString("username", "@string/pref_title_display_username");
-        Log.d(TAG, "Owner: " + owner);
-        Log.d(TAG, "Ownername: " + ownerName);
-        // get Owner Name from SharedPref if owner == yes
-        if (owner.equals("+") || owner.equals("Ja")) {
-            tViewON.setText(ownerName);
-        }
+//        SharedPreferences mSettings = PreferenceManager.getDefaultSharedPreferences(this);
+//        String ownerName = mSettings.getString("username", "@string/pref_title_display_username");
+//        Log.d(TAG, "Owner: " + owner);
+//        Log.d(TAG, "Ownername: " + ownerName);
+//        // get Owner Name from SharedPref if owner == yes
+//        if (owner.equals("+") || owner.equals("Ja")) {
+//            tViewON.setText(ownerName);
+//        }
     }
 
     private void toastMessage(String message){
@@ -138,5 +143,22 @@ public class EditDataActivity extends AppCompatActivity {
         tViewON.setText("");
         toastMessage("removed from database");
 //        startActivity(new Intent(this, ListDataActivity.class));
+    }
+
+    public void fabUpdateDB(View view) {
+        if (owner.equals("+")) {
+            toastMessage("You own that book yourself // Du besitzt das Buch selbst");
+        } else {
+            Log.d(TAG, "pressed update button");
+            String ownerNameUpdate = tViewON.getText().toString();
+            databaseHelper.updateById(bookid, ownerNameUpdate);
+            Log.d(TAG, "updated DB");
+
+            toastMessage("Updated Database");
+
+//            startActivity(new Intent(this, ListDataActivity.class));
+        }
+
+
     }
 }

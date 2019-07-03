@@ -93,7 +93,7 @@ public class FourColumnAdapter extends ArrayAdapter<Book> implements Filterable 
                     if (tmpArray.get(i).getAuthor().contains(constraint) || tmpArray.get(i).getTitle().contains(constraint)) {
                         Book newBook = new Book(tmpArray.get(i).getId(), tmpArray.get(i).getAuthor(),
                                 tmpArray.get(i).getTitle(), tmpArray.get(i).getOwner(), tmpArray.get(i).getRating(),
-                                tmpArray.get(i).getThumbnailSmall(), tmpArray.get(i).getThumbnail(), tmpArray.get(i).getPageCount());
+                                tmpArray.get(i).getThumbnailSmall(), tmpArray.get(i).getThumbnail(), tmpArray.get(i).getPageCount(), tmpArray.get(i).getOwnerName());
 
                         filter.add(newBook);
                     }

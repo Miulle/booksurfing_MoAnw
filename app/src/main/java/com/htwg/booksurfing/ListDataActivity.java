@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -32,6 +33,7 @@ public class ListDataActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "created ListDataActivity");
         setContentView(R.layout.list_layout);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         listView = findViewById(R.id.ListView2);
         databaseHelper = new DatabaseHelper(this);
         populateListView();
@@ -47,7 +49,7 @@ public class ListDataActivity  extends AppCompatActivity {
             Log.d(TAG, "NUMROWS = " + numRows);
             int i = 0;
             while(data1.moveToNext()) {
-                book = new Book(data1.getInt(0), data1.getString(1), data1.getString(2), data1.getString(3), data1.getString(4), data1.getString(5), data1.getString(6), data1.getString(7));
+                book = new Book(data1.getInt(0), data1.getString(1), data1.getString(2), data1.getString(3), data1.getString(4), data1.getString(5), data1.getString(6), data1.getString(7), data1.getString(8));
                 bookData.add(i, book);
                 i++;
             }
@@ -107,6 +109,7 @@ public class ListDataActivity  extends AppCompatActivity {
         String thumbnail;
         String thumbnailSmall;
         String pageCount;
+        String ownerName;
 
         Cursor data = databaseHelper.getItemByID(bookid.toString());
         Log.d(TAG, "found item " + data.getCount());
@@ -128,7 +131,9 @@ public class ListDataActivity  extends AppCompatActivity {
                 Log.d(TAG, "INDEX 6 " + data.getString(6));
                 thumbnailSmall = data.getString(6);
                 pageCount = data.getString(7);
+                ownerName = data.getString(8);
                 Intent i = new Intent(ListDataActivity.this, EditDataActivity.class);
+                i.putExtra("bookid", bookid.toString());
                 i.putExtra("author", author);
                 i.putExtra("title", title);
                 i.putExtra("owner", owner);
@@ -136,6 +141,7 @@ public class ListDataActivity  extends AppCompatActivity {
                 i.putExtra("thumbnail", thumbnail);
                 i.putExtra("thumbnailSmall", thumbnailSmall);
                 i.putExtra("pageCount", pageCount);
+                i.putExtra("ownerName", ownerName);
 
                 startActivity(i);
             }

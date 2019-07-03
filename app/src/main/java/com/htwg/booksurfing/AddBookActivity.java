@@ -1,7 +1,9 @@
 package com.htwg.booksurfing;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -65,9 +67,9 @@ public class AddBookActivity extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    public void addData(String a, String t, String o, String r, String tl, String ts, String pc) {
+    public void addData(String a, String t, String o, String r, String tl, String ts, String pc, String oN) {
         toastMessage(a + t + o + r);
-        boolean insertData = databaseHelper.addDataToBookable(a, t, o, r, tl, ts, pc);
+        boolean insertData = databaseHelper.addDataToBookable(a, t, o, r, tl, ts, pc, oN);
         if (insertData==true) {
             toastMessage("Data successfully added");
         } else {
@@ -93,12 +95,24 @@ public class AddBookActivity extends AppCompatActivity {
         String thumbnailL = textViewTL.getText().toString();
         String thumbnailS = textViewTS.getText().toString();
         String pageCount = textViewPC.getText().toString();
+        String ownerNameAddToDB = null;
+
+        // check Ownership and add owner name to DB
+        SharedPreferences mSettings = PreferenceManager.getDefaultSharedPreferences(this);
+        String ownerName = mSettings.getString("username", "@string/pref_title_display_username");
+        Log.d(TAG, "Owner: " + owner);
+        Log.d(TAG, "Ownername: " + ownerName);
+        // get Owner Name from SharedPref if owner == yes
+        if (owner.equals("+") || owner.equals("Ja")) {
+            ownerNameAddToDB = ownerName;
+        }
+
 
         Log.d(TAG, "RATING: " + rating);
         Log.d(TAG, "PAGES: " + pageCount);
 
         if (author.length() != 0 && title.length() != 0) {
-            addData(author, title, owner, rating, thumbnailL, thumbnailS, pageCount);
+            addData(author, title, owner, rating, thumbnailL, thumbnailS, pageCount, ownerNameAddToDB);
             textViewA.setText("");
             textViewT.setText("");
             textViewR.setText("");
