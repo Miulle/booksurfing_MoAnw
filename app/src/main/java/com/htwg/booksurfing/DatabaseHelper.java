@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.ScrollView;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -16,10 +17,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL1 = "ID";
     private static final String COL2 = "author";
     private static final String COL3 = "title";
-    private static final String COL4 = "Owner";
-    private static final String COL5 = "Rating";
-    private static final String COL6 = "Thumbnail";
-    private static final String COL7 = "ThumbnailSmall";
+    private static final String COL4 = "owner";
+    private static final String COL5 = "rating";
+    private static final String COL6 = "thumbnail";
+    private static final String COL7 = "thumbnailSmall";
+    private static final String COL8 = "pageCount";
+
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 2);
@@ -30,7 +33,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                " author TEXT, title TEXT, Owner TEXT, Rating TEXT, Thumbnail TEXT, ThumbnailSmall TEXT)";
+                " author TEXT, title TEXT, Owner TEXT, Rating TEXT, Thumbnail TEXT, ThumbnailSmall TEXT, " +
+                "pageCount TEXT)";
         db.execSQL(createTable);
     }
 
@@ -40,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addDataToBookTable(String author, String title, String owner, String rating, String thumbnail, String thumbnailSmall) {
+    public boolean addDataToBookable(String author, String title, String owner, String rating, String thumbnail, String thumbnailSmall, String pageCount) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL2, author);
@@ -48,7 +52,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL4, owner);
         contentValues.put(COL5, rating);
         contentValues.put(COL6, thumbnail);
-        contentValues.put(COL6, thumbnailSmall);
+        contentValues.put(COL7, thumbnailSmall);
+        contentValues.put(COL8, pageCount);
 
 
         Log.d(TAG, "addData: Adding " + author + " " + title + " " + owner + " " + rating + " " + thumbnail + " to " + TABLE_NAME);

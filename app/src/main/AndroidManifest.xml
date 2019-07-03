@@ -43,12 +43,12 @@
         </activity>
 
         <activity
-            android:name="com.htwg.booksurfing.SettingsActivity"
+            android:name="com.htwg.booksurfing.WebViewActivity"
             android:label="@string/app_name">
         </activity>
 
         <activity
-            android:name="com.htwg.booksurfing.WebViewActivity"
+            android:name="com.htwg.booksurfing.WebViewActivity2"
             android:label="@string/app_name">
         </activity>
 

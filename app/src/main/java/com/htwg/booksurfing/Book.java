@@ -8,8 +8,9 @@ public class Book {
     private String Rating;
     private String ThumbnailSmall;
     private String Thumbnail;
+    private String pageCount;
 
-    public Book(int id, String a, String t, String o, String r, String ts, String tl) {
+    public Book(int id, String a, String t, String o, String r, String ts, String tl, String pc) {
         this.id = id;
         this.Author = a;
         this.Title = t;
@@ -17,6 +18,7 @@ public class Book {
         this.Rating = r;
         this.ThumbnailSmall = ts;
         this.Thumbnail = tl;
+        this.pageCount = pc;
 
     }
 
@@ -74,5 +76,13 @@ public class Book {
 
     public void setThumbnail(String t) {
         this.Thumbnail = t;
+    }
+
+    public String getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(String pc) {
+        this.pageCount= pc;
     }
 }
