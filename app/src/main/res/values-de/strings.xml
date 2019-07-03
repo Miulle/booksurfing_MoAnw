@@ -39,8 +39,8 @@
     <string name="eViewRating">n/v</string>
     
     <string-array name="Owner">
-        <item>Ja</item>
-        <item>Nein</item>
+        <item>+</item>
+        <item>-</item>
     </string-array>
 
     <string-array name="Borrowed">
@@ -61,6 +61,7 @@
     <string name="textViewOwnerEditLayout">Besitzer:</string>
     <string name="textViewTitleEditLayout">Titel:</string>
     <string name="textViewAuthorEditLayout">Autor:</string>
+    <string name="textViewPageCount">Seiten:</string>
 
     <string name="webViewButton">Suche Buch online</string>
 
@@ -69,5 +70,9 @@
     <string name="table_title">Titel</string>
     <string name="table_owner">Besitzer</string>
     <string name="table_rating">Rating</string>
+    <string name="ownerName">B-Name</string>
+    <string name="textViewPCEditLayout">Seiten:</string>
+    <string name="textViewOwnerNameEditLayout">Besitzer-N:</string>
+
 
 </resources>

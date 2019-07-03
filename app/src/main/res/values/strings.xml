@@ -16,11 +16,8 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
-    <string name="scan_color">SCAN COLOR</string>
-
     <string name="scan_book">Insert new Book</string>
     <string name="view_Library">View Library</string>
-    <string name="change_intent">Change Intent</string>
 
     <string name="add_data">Add Data</string>
     <string name="add_book_manually">Add Book manually</string>
@@ -42,8 +39,8 @@
     <string name="eViewRating">n/a</string>
 
     <string-array name="Owner">
-        <item>Yes</item>
-        <item>No</item>
+        <item>+</item>
+        <item>-</item>
     </string-array>
 
     <string-array name="Borrowed">
@@ -64,6 +61,7 @@
     <string name="textViewOwnerEditLayout">Owner:</string>
     <string name="textViewTitleEditLayout">Title:</string>
     <string name="textViewAuthorEditLayout">Author:</string>
+    <string name="textViewPageCount">Pages:</string>
 
     <string name="webViewButton">Search book online</string>
 
@@ -75,6 +73,9 @@
     <string name="table_title">Title</string>
     <string name="table_owner">Owner</string>
     <string name="table_rating">Rating</string>
+    <string name="ownerName">O-Name</string>
+    <string name="textViewPCEditLayout">Pages:</string>
+    <string name="textViewOwnerNameEditLayout">Owner-N:</string>
 
 
 </resources>
