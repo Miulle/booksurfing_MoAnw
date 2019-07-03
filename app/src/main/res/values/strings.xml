@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">Booksurfing</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="MainscreenText">Welcome to your book library! You can either inspect your library or insert a new book</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+    <string name="scan_color">SCAN COLOR</string>
+
+    <string name="scan_book">Insert new Book</string>
+    <string name="view_Library">View Library</string>
+    <string name="change_intent">Change Intent</string>
+
+    <string name="add_data">Add Data</string>
+    <string name="add_book_manually">Add Book manually</string>
+    <string name="add_book">Add Book</string>
+    <string name="delete_book">Delete Book</string>
+    <string name="search_book">Search</string>
+    <string name="eViewDelete">eViewDelete</string>
+    <string name="whichBookToDelete">Please insert the booktitle that you want to delete:</string>
+    <string name="whichBookToSearch">Please insert the booktitle/bookID:</string>
+
+    <string name="scan_isbn">Scan ISBN</string>
+    <string name="save_book">Save</string>
+    <string name="back_lib">Back to Library</string>
+
+    <string name="author">Author:</string>
+    <string name="title">Title:</string>
+    <string name="owner">Owner:</string>
+    <string name="rating">Rating:</string>
+    <string name="eViewRating">n/a</string>
+
+    <string-array name="Owner">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="Borrowed">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string name="pref_title_display_name">API Key for Google Books API</string>
+    <string name="pref_default_display_name">AIzaSyD2z6y5CfLw3R7dk5-0sJR3Ss2nP7QLd5Q</string>
+    <string name="pref_api_summary">API Key to access the Google Books REST-based mirco services</string>
+
+    <string name="pref_title_display_username">Username</string>
+    <string name="pref_default_display_username">Mikael</string>
+    <string name="pref_api_summaryuser">Mikael</string>
+    <string name="textViewTSEditLayout">Thumbnail(s):</string>
+    <string name="textViewTLEditLayout">Thumbnail(l):</string>
+    <string name="textViewRatingEditLayout">Rating:</string>
+    <string name="textViewOwnerEditLayout">Owner:</string>
+    <string name="textViewTitleEditLayout">Title:</string>
+    <string name="textViewAuthorEditLayout">Author:</string>
+
+    <string name="webViewButton">Search book online</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="table_id">ID</string>
+    <string name="table_author">Author</string>
+    <string name="table_title">Title</string>
+    <string name="table_owner">Owner</string>
+    <string name="table_rating">Rating</string>
+
+
+</resources>
